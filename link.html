@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KLE Tech Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background: white;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 3px solid #8b0000;
+        }
+        .header img {
+            height: 40px;
+            margin-left: 10px;
+        }
+        .header-links {
+            font-size: 14px;
+            margin-right: 15px;
+        }
+        .header-links a {
+            color: #8b0000;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            margin-top: 20px;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-top: 5px solid #8b0000;
+        }
+        .login-box {
+            background: #8b0000;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            width: 50%;
+            margin: auto;
+            border-radius: 5px;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        .button-box {
+            display: flex;
+            justify-content: center;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            background: #ddd;
+        }
+        button:hover {
+            background: #bbb;
+        }
+        .notice {
+            background: #ffefea;
+            padding: 10px;
+            border-left: 5px solid #8b0000;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        .footer {
+            background: #8b0000;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://eresults.kletech.ac.in/logo.png" alt="KLE Tech Logo">
+        <div class="header-links">
+            <a href="#">Click here for KLESCET result</a>
+            <a href="#">Click here for KLELaw result</a>
+        </div>
+    </div>
+    <div class="container">
+        <h3>Dec 2024 - Provisional Results</h3>
+        <div class="login-box">
+            <h2>Enter Student Registration No (SRN)</h2>
+            <input type="text" id="studentId" placeholder="Enter SRN">
+            <input type="text" id="captcha" placeholder="Enter CAPTCHA">
+            <div class="button-box">
+                <button onclick="login()">Seating</button>
+                <button onclick="showResult()">Result</button>
+            </div>
+        </div>
+        <div class="notice">
+            <b>NOTE:</b> The Results which show TAL means Admission fees Due / Scholarship Due. Contact AKSHAY - 0836-2378239 for more information.
+        </div>
+    </div>
+    <div class="footer">Copyright & Powered By Contineo | Terms of Service | Privacy Policy</div>
+    <script>
+        function login() {
+            var studentId = document.getElementById("studentId").value;
+            var captcha = document.getElementById("captcha").value;
+            if (studentId !== "" && captcha !== "") {
+                alert("Processing...");
+            } else {
+                alert("Please enter valid details");
+            }
+        }
+        function showResult() {
+            var studentId = document.getElementById("studentId").value;
+            var captcha = document.getElementById("captcha").value;
+            if (studentId !== "" && captcha !== "") {
+                window.location.href = "result.html?srn=" + encodeURIComponent(studentId);
+            } else {
+                alert("Please enter valid details");
+            }
+        }
+    </script>
+</body>
+</html>
